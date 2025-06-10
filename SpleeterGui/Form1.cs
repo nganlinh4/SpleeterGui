@@ -56,7 +56,7 @@ namespace SpleeterGui
             //program startup - initialise things
             txt_output_directory.Text = Properties.Settings.Default.output_location;
 
-            string path = Directory.GetCurrentDirectory();
+            string path = Application.StartupPath;
             path_python = path.ToString() + @"\python";
             storage = path.ToString();
             /*
@@ -106,16 +106,8 @@ namespace SpleeterGui
             }
             else
             {
-                //dev mode
-                string[] dirs = Directory.GetDirectories("C:\\temp\\spleeter_target\\SpleeterGUI_core", "spleeter-*", SearchOption.TopDirectoryOnly);
-                
-                foreach (string dir in dirs)
-                {
-                    spleet = dir;
-                    spleet = spleet.Replace("C:\\temp\\spleeter_target\\SpleeterGUI_core\\", "");
-                    spleet = spleet.Replace(".dist-info", "");
-                    textBox1.Text = txt + " [" + spleet + "]\r\n";
-                }
+                //python directory not found - show message without crashing
+                textBox1.Text = txt + " [Python/Spleeter not found - please set Python path in Help menu]\r\n";
             }
         }
 
@@ -123,7 +115,7 @@ namespace SpleeterGui
         {
             //find and load language files in to menu toolstrip
             ToolStrip language_menu = new ToolStrip();
-            var enviroment = System.Environment.CurrentDirectory;
+            var enviroment = Application.StartupPath;
             string[] fileEntries = Directory.GetFiles(enviroment + "\\languages");
 
 
@@ -164,7 +156,7 @@ namespace SpleeterGui
             int i = 0;
             string control_name = null;
             string control_label = null;
-            var enviroment = System.Environment.CurrentDirectory;
+            var enviroment = Application.StartupPath;
             FileStream fs = new FileStream(enviroment + "\\languages\\" + lang_name + ".xml", FileMode.Open, FileAccess.Read);
             xmldoc.Load(fs);
             xmlnode = xmldoc.GetElementsByTagName("item");  //load control texts
@@ -498,7 +490,7 @@ namespace SpleeterGui
         private string get_config_string()
         {
             //reads the JSON config file for the current stem mode
-            var enviroment = System.Environment.CurrentDirectory;
+            var enviroment = Application.StartupPath;
             string readText = File.ReadAllText(enviroment + @"\configs\" + stem_count + "stems.json");
             if (mask_extension == "average")
             {
