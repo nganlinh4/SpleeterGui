@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+    <language english="vietnamese" control="">Tiếng Việt</language>
+    <!-- menu items -->
+    <menu english="File" control="fileToolStripMenuItem">Tệp</menu>
+    <menu english="Exit" control="exitToolStripMenuItem">Thoát</menu>
+    <menu english="Help" control="helpToolStripMenuItem">Trợ giúp</menu>
+    <menu english="Help &amp; FAQ" control="helpFAQToolStripMenuItem">Trợ giúp &amp; Câu hỏi thường gặp</menu>
+    <menu english="Check spleeterGUI version" control="checkSpleeterGUIUpdateToolStripMenuItem">Kiểm tra phiên bản spleeterGUI</menu>
+    <menu english="Spleeter core upgrade" control="spleeterupgradeToolStripMenuItem">Nâng cấp lõi Spleeter</menu>
+    <menu english="SpleeterGUI github page" control="spleeterGithubPageToolStripMenuItem">Trang github SpleeterGUI</menu>
+    <menu english="Maken it so" control="makenItSoToolStripMenuItem1">Maken it so</menu>
+    <menu english="Advanced" control="advancedToolStripMenuItem">Nâng cao</menu>
+    <menu english="Set SpleeterGUI path" control="setPythonPathToolStripMenuItem1">Đặt đường dẫn SpleeterGUI</menu>
+    <menu english="Set json configs path" control="setJsonConfigsPathToolStripMenuItem1">Đặt đường dẫn cấu hình json</menu>
+
+  
+  <!-- form controls -->
+    <item english="Music source separation" control="lblSlogan1">Tách nguồn âm nhạc</item>
+    <item english="Windows desktop bundle" control="lblSlogan2">Gói ứng dụng Windows</item>
+    <item english="Parts to separate" control="lblPartsTitle">Phần cần tách</item>
+    <item english="2" control="parts_btn2">2</item>
+    <item english="Vocal + Accompaniment" control="parts_label">Giọng hát + Nhạc nền</item>
+    <item english="4" control="parts_btn4">4</item>
+    <item english="5" control="parts_btn5">5</item>
+    <item english="Recombine (Merge output parts back together)" control="chkRecombine">Kết hợp lại (Gộp các phần đầu ra lại với nhau)</item>
+    <item english="Vocal" control="chkRPartVocal">Giọng hát</item>
+    <item english="Bass" control="chkRPartBass">Bass</item>
+    <item english="Drums" control="chkRPartDrums">Trống</item>
+    <item english="Piano" control="chkRPartPiano">Piano</item>
+    <item english="Other" control="chkRPartOther">Khác</item>
+    <item english="Full bandwidth (16Khz High quality)" control="chkFullBandwidth">Băng thông đầy đủ (16Khz Chất lượng cao)</item>
+    <item english="Save to" control="btnSaveTo">Lưu vào</item>
+    <item english="Drop your music file(s) here to begin processing" control="lblDroptext">Thả tệp nhạc của bạn vào đây để bắt đầu xử lý</item>
+    <item english="Or select music file(s)" control="btnSelectFiles">Hoặc chọn tệp nhạc</item>
+    <item english="Progress" control="lblProgress">Tiến trình</item>
+    <item english="Maximum song length" control="lblMaxLength">Độ dài bài hát tối đa</item>
+    <item english="seconds" control="lblSeconds">giây</item>
+  
+
+    <!-- program texts -->
+    <lang english="Showing spleeter version" control="LoadStuff_textBox1">Trợ giúp: https://makenweb.com/spleeter_help.php[NL]Vấn đề: https://github.com/boy1dr/SpleeterGui/issues[NL][NL]Hiển thị phiên bản spleeter</lang>
+    <lang english="Please select an output directory" control="Form1_DragDrop_msgbox">Vui lòng chọn thư mục đầu ra</lang>
+    <lang english="Starting" control="starting">Đang bắt đầu</lang>
+    <lang english="Starting processing of all songs" control="starting_all">Bắt đầu xử lý tất cả bài hát</lang>
+    <lang english="songs remaining" control="songs_remaining">bài hát còn lại</lang>
+    <lang english="Working" control="working">Đang làm việc</lang>
+    <lang english="Processing" control="processing">Đang xử lý</lang>
+    <lang english="idle" control="idle">rảnh rỗi</lang>
+    <lang english="Finished processing all songs" control="finished">Hoàn thành xử lý tất cả bài hát</lang>
+    <lang english="Run complete" control="run_complete">Chạy hoàn tất</lang>
+    <lang english="Vocal + Accompaniment" control="vocal_accompaniment">Giọng hát + Nhạc nền</lang>
+    <lang english="Vocal + Bass + Drums + Other" control="vocal_bass_drums_other">Giọng hát + Bass + Trống + Khác</lang>
+    <lang english="Vocal + Bass + Drums + Piano + Other" control="vocal_bass_drums_piano_other">Giọng hát + Bass + Trống + Piano + Khác</lang>
+    <lang english="Please select an output directory" control="output_message">Vui lòng chọn thư mục đầu ra</lang>
+    <lang english="Running update command" control="run_update">Đang chạy lệnh cập nhật</lang>
+    <lang english="This might take a while, wait for the beep" control="run_update_b">Điều này có thể mất một lúc, hãy đợi tiếng bíp</lang>
+    <lang english="Version" control="version">Phiên bản</lang>
+    <lang english="is available" control="is_available">có sẵn</lang>
+    <lang english="You are using the latest version" control="latest">Bạn đang sử dụng phiên bản mới nhất</lang>
+    <lang english="Unable get new version data, check internet connection" control="unable">Không thể lấy dữ liệu phiên bản mới, kiểm tra kết nối internet</lang>
+    <lang english="Choose output location" control="set_output">Chọn vị trí đầu ra</lang>
+    <lang english="Choose location of python.exe" control="set_python_path">Chọn vị trí của python.exe</lang>
+</root>

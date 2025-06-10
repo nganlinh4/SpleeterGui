@@ -42,3 +42,14 @@ C:\temp\repos\SpleeterGui\SpleeterGui\obj\Debug\SpleeterGui.csproj.GenerateResou
 C:\temp\repos\SpleeterGui\SpleeterGui\obj\Debug\SpleeterGui.csproj.CoreCompileInputs.cache
 C:\temp\repos\SpleeterGui\SpleeterGui\obj\Debug\SpleeterGui.exe
 C:\temp\repos\SpleeterGui\SpleeterGui\obj\Debug\SpleeterGui.pdb
+C:\work\SpleeterGui\SpleeterGui\bin\Debug\SpleeterGui.exe.config
+C:\work\SpleeterGui\SpleeterGui\bin\Debug\SpleeterGui.exe
+C:\work\SpleeterGui\SpleeterGui\bin\Debug\SpleeterGui.pdb
+C:\work\SpleeterGui\SpleeterGui\obj\Debug\SpleeterGui.csproj.AssemblyReference.cache
+C:\work\SpleeterGui\SpleeterGui\obj\Debug\SpleeterGui.exe.config
+C:\work\SpleeterGui\SpleeterGui\obj\Debug\SpleeterGui.Form1.resources
+C:\work\SpleeterGui\SpleeterGui\obj\Debug\SpleeterGui.Properties.Resources.resources
+C:\work\SpleeterGui\SpleeterGui\obj\Debug\SpleeterGui.csproj.GenerateResource.cache
+C:\work\SpleeterGui\SpleeterGui\obj\Debug\SpleeterGui.csproj.CoreCompileInputs.cache
+C:\work\SpleeterGui\SpleeterGui\obj\Debug\SpleeterGui.exe
+C:\work\SpleeterGui\SpleeterGui\obj\Debug\SpleeterGui.pdb

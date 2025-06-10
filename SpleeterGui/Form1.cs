@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
 
@@ -44,6 +45,24 @@ namespace SpleeterGui
             this.AllowDrop = true;
             this.DragEnter += new DragEventHandler(Form1_DragEnter);
             this.DragDrop += new DragEventHandler(Form1_DragDrop);
+
+            // Apply modern styling
+            ApplyModernStyling();
+
+            // Set up drag and drop for file input panel
+            pnlFileInput.AllowDrop = true;
+            pnlFileInput.DragEnter += new DragEventHandler(FileInput_DragEnter);
+            pnlFileInput.DragDrop += new DragEventHandler(Form1_DragDrop);
+            pnlFileInput.DragLeave += new EventHandler(FileInput_DragLeave);
+
+            // Set up modern drag and drop visual feedback
+            SetupModernDragDrop();
+
+            // Add custom window controls
+            SetupCustomTitleBar();
+
+            // Apply rounded corners to the entire form
+            ApplyFormRoundedCorners();
         }
 
         private void Form1_Shown(object sender, EventArgs e)
@@ -200,9 +219,57 @@ namespace SpleeterGui
             progress_txt.Text = langStr["idle"];
         }
 
+        private void SetupModernDragDrop()
+        {
+            // Add modern drag and drop styling to file input panel
+            pnlFileInput.Paint += (s, e) => DrawModernDragDropArea(e, pnlFileInput);
+        }
+
+        private void DrawModernDragDropArea(PaintEventArgs e, Panel panel)
+        {
+            Graphics g = e.Graphics;
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+
+            // Draw dashed border for drag and drop area
+            using (Pen dashedPen = new Pen(Color.FromArgb(100, 150, 150, 150), 2))
+            {
+                dashedPen.DashStyle = DashStyle.Dash;
+                Rectangle borderRect = new Rectangle(10, 10, panel.Width - 20, panel.Height - 20);
+
+                // Create rounded rectangle path
+                GraphicsPath borderPath = new GraphicsPath();
+                int radius = 8;
+                borderPath.AddArc(borderRect.X, borderRect.Y, radius, radius, 180, 90);
+                borderPath.AddArc(borderRect.X + borderRect.Width - radius, borderRect.Y, radius, radius, 270, 90);
+                borderPath.AddArc(borderRect.X + borderRect.Width - radius, borderRect.Y + borderRect.Height - radius, radius, radius, 0, 90);
+                borderPath.AddArc(borderRect.X, borderRect.Y + borderRect.Height - radius, radius, radius, 90, 90);
+                borderPath.CloseAllFigures();
+
+                g.DrawPath(dashedPen, borderPath);
+            }
+        }
+
         void Form1_DragEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop)) e.Effect = DragDropEffects.Copy;
+        }
+
+        void FileInput_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effect = DragDropEffects.Copy;
+                // Change panel appearance for drag feedback
+                pnlFileInput.BackColor = Color.FromArgb(60, 60, 65);
+                pnlFileInput.Invalidate();
+            }
+        }
+
+        void FileInput_DragLeave(object sender, EventArgs e)
+        {
+            // Restore original panel appearance
+            pnlFileInput.BackColor = Color.FromArgb(45, 45, 48);
+            pnlFileInput.Invalidate();
         }
 
         void Form1_DragDrop(object sender, DragEventArgs e)
@@ -527,33 +594,304 @@ namespace SpleeterGui
         {
             //set the stem mode to 2
             parts_label.Text = langStr["vocal_accompaniment"];
-            parts_btn2.UseVisualStyleBackColor = false;
-            parts_btn4.UseVisualStyleBackColor = true;
-            parts_btn5.UseVisualStyleBackColor = true;
             stem_count = "2";
             update_checks();
+            UpdateButtonSelection();
         }
 
         private void parts_btn4_Click(object sender, EventArgs e)
         {
             //set the stem mode to 4
             parts_label.Text = langStr["vocal_bass_drums_other"];
-            parts_btn2.UseVisualStyleBackColor = true;
-            parts_btn4.UseVisualStyleBackColor = false;
-            parts_btn5.UseVisualStyleBackColor = true;
             stem_count = "4";
             update_checks();
+            UpdateButtonSelection();
         }
 
         private void parts_btn5_Click(object sender, EventArgs e)
         {
             //set the stem mode to 5
             parts_label.Text = langStr["vocal_bass_drums_piano_other"];
-            parts_btn2.UseVisualStyleBackColor = true;
-            parts_btn4.UseVisualStyleBackColor = true;
-            parts_btn5.UseVisualStyleBackColor = false;
             stem_count = "5";
             update_checks();
+            UpdateButtonSelection();
+        }
+
+        private void ApplyModernStyling()
+        {
+            // Apply modern styling to all panels and controls
+            ApplyRoundedCorners();
+            ApplyModernColors();
+            ApplyButtonStyling();
+
+            // Set initial button selection
+            UpdateButtonSelection();
+        }
+
+        private void ApplyRoundedCorners()
+        {
+            // Apply rounded corners to panels
+            SetRoundedCorners(pnlHeader, 12);
+            SetRoundedCorners(pnlSeparationOptions, 12);
+            SetRoundedCorners(pnlFileInput, 12);
+            SetRoundedCorners(pnlOutput, 12);
+            SetRoundedCorners(pnlMain, 12);
+
+            // Apply rounded corners to buttons
+            SetRoundedButton(parts_btn2, 8);
+            SetRoundedButton(parts_btn4, 8);
+            SetRoundedButton(parts_btn5, 8);
+            SetRoundedButton(btnSelectFiles, 8);
+            SetRoundedButton(btnSaveTo, 8);
+        }
+
+        private void SetRoundedCorners(Control control, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            Rectangle rect = new Rectangle(0, 0, control.Width, control.Height);
+
+            path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
+            path.AddArc(rect.X + rect.Width - radius, rect.Y, radius, radius, 270, 90);
+            path.AddArc(rect.X + rect.Width - radius, rect.Y + rect.Height - radius, radius, radius, 0, 90);
+            path.AddArc(rect.X, rect.Y + rect.Height - radius, radius, radius, 90, 90);
+            path.CloseAllFigures();
+
+            control.Region = new Region(path);
+        }
+
+        private void SetRoundedButton(Button button, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            Rectangle rect = new Rectangle(0, 0, button.Width, button.Height);
+
+            path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
+            path.AddArc(rect.X + rect.Width - radius, rect.Y, radius, radius, 270, 90);
+            path.AddArc(rect.X + rect.Width - radius, rect.Y + rect.Height - radius, radius, radius, 0, 90);
+            path.AddArc(rect.X, rect.Y + rect.Height - radius, radius, radius, 90, 90);
+            path.CloseAllFigures();
+
+            button.Region = new Region(path);
+            button.FlatStyle = FlatStyle.Flat;
+            button.FlatAppearance.BorderSize = 0;
+        }
+
+        private void ApplyModernColors()
+        {
+            // Apply gradient backgrounds and modern colors
+            this.BackColor = Color.FromArgb(24, 24, 24);
+
+            // Header with gradient and shadow
+            pnlHeader.Paint += (s, e) => {
+                DrawShadow(e, pnlHeader);
+                DrawGradientPanel(e, pnlHeader, Color.FromArgb(45, 45, 48), Color.FromArgb(37, 37, 38));
+            };
+
+            // Panels with subtle gradients and shadows
+            pnlSeparationOptions.Paint += (s, e) => {
+                DrawShadow(e, pnlSeparationOptions);
+                DrawGradientPanel(e, pnlSeparationOptions, Color.FromArgb(45, 45, 48), Color.FromArgb(40, 40, 43));
+            };
+
+            pnlFileInput.Paint += (s, e) => {
+                DrawShadow(e, pnlFileInput);
+                DrawGradientPanel(e, pnlFileInput, Color.FromArgb(45, 45, 48), Color.FromArgb(40, 40, 43));
+            };
+
+            pnlOutput.Paint += (s, e) => {
+                DrawShadow(e, pnlOutput);
+                DrawGradientPanel(e, pnlOutput, Color.FromArgb(45, 45, 48), Color.FromArgb(40, 40, 43));
+            };
+
+            pnlMain.Paint += (s, e) => {
+                DrawShadow(e, pnlMain);
+                DrawGradientPanel(e, pnlMain, Color.FromArgb(30, 30, 30), Color.FromArgb(25, 25, 25));
+            };
+        }
+
+        private void DrawShadow(PaintEventArgs e, Panel panel)
+        {
+            Graphics g = e.Graphics;
+            g.SmoothingMode = SmoothingMode.AntiAlias;
+
+            // Create shadow effect
+            Rectangle shadowRect = new Rectangle(3, 3, panel.Width - 3, panel.Height - 3);
+            using (GraphicsPath shadowPath = CreateRoundedRectanglePath(shadowRect, 12))
+            {
+                using (PathGradientBrush shadowBrush = new PathGradientBrush(shadowPath))
+                {
+                    shadowBrush.CenterColor = Color.FromArgb(50, 0, 0, 0);
+                    shadowBrush.SurroundColors = new Color[] { Color.FromArgb(0, 0, 0, 0) };
+                    g.FillPath(shadowBrush, shadowPath);
+                }
+            }
+        }
+
+        private GraphicsPath CreateRoundedRectanglePath(Rectangle rect, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
+            path.AddArc(rect.X + rect.Width - radius, rect.Y, radius, radius, 270, 90);
+            path.AddArc(rect.X + rect.Width - radius, rect.Y + rect.Height - radius, radius, radius, 0, 90);
+            path.AddArc(rect.X, rect.Y + rect.Height - radius, radius, radius, 90, 90);
+            path.CloseAllFigures();
+            return path;
+        }
+
+        private void SetupCustomTitleBar()
+        {
+            // Add window dragging capability to header panel
+            bool isDragging = false;
+            Point lastCursor = Point.Empty;
+            Point lastForm = Point.Empty;
+
+            pnlHeader.MouseDown += (s, e) => {
+                if (e.Button == MouseButtons.Left)
+                {
+                    isDragging = true;
+                    lastCursor = Cursor.Position;
+                    lastForm = this.Location;
+                }
+            };
+
+            pnlHeader.MouseMove += (s, e) => {
+                if (isDragging)
+                {
+                    Point currentCursor = Cursor.Position;
+                    Point offset = new Point(currentCursor.X - lastCursor.X, currentCursor.Y - lastCursor.Y);
+                    this.Location = new Point(lastForm.X + offset.X, lastForm.Y + offset.Y);
+                }
+            };
+
+            pnlHeader.MouseUp += (s, e) => {
+                isDragging = false;
+            };
+
+            // Add close button to header
+            Button closeButton = new Button();
+            closeButton.Text = "✕";
+            closeButton.Size = new Size(30, 30);
+            closeButton.Location = new Point(pnlHeader.Width - 35, 5);
+            closeButton.BackColor = Color.Transparent;
+            closeButton.FlatStyle = FlatStyle.Flat;
+            closeButton.FlatAppearance.BorderSize = 0;
+            closeButton.ForeColor = Color.White;
+            closeButton.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            closeButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+
+            closeButton.MouseEnter += (s, e) => closeButton.BackColor = Color.FromArgb(232, 17, 35);
+            closeButton.MouseLeave += (s, e) => closeButton.BackColor = Color.Transparent;
+            closeButton.Click += (s, e) => this.Close();
+
+            pnlHeader.Controls.Add(closeButton);
+
+            // Add minimize button
+            Button minimizeButton = new Button();
+            minimizeButton.Text = "−";
+            minimizeButton.Size = new Size(30, 30);
+            minimizeButton.Location = new Point(pnlHeader.Width - 70, 5);
+            minimizeButton.BackColor = Color.Transparent;
+            minimizeButton.FlatStyle = FlatStyle.Flat;
+            minimizeButton.FlatAppearance.BorderSize = 0;
+            minimizeButton.ForeColor = Color.White;
+            minimizeButton.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            minimizeButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+
+            minimizeButton.MouseEnter += (s, e) => minimizeButton.BackColor = Color.FromArgb(60, 60, 60);
+            minimizeButton.MouseLeave += (s, e) => minimizeButton.BackColor = Color.Transparent;
+            minimizeButton.Click += (s, e) => this.WindowState = FormWindowState.Minimized;
+
+            pnlHeader.Controls.Add(minimizeButton);
+        }
+
+        private void ApplyFormRoundedCorners()
+        {
+            // Apply rounded corners to the entire form
+            GraphicsPath path = new GraphicsPath();
+            int radius = 15;
+            Rectangle rect = new Rectangle(0, 0, this.Width, this.Height);
+
+            path.AddArc(rect.X, rect.Y, radius, radius, 180, 90);
+            path.AddArc(rect.X + rect.Width - radius, rect.Y, radius, radius, 270, 90);
+            path.AddArc(rect.X + rect.Width - radius, rect.Y + rect.Height - radius, radius, radius, 0, 90);
+            path.AddArc(rect.X, rect.Y + rect.Height - radius, radius, radius, 90, 90);
+            path.CloseAllFigures();
+
+            this.Region = new Region(path);
+        }
+
+        private void DrawGradientPanel(PaintEventArgs e, Panel panel, Color startColor, Color endColor)
+        {
+            using (LinearGradientBrush brush = new LinearGradientBrush(
+                panel.ClientRectangle, startColor, endColor, LinearGradientMode.Vertical))
+            {
+                e.Graphics.FillRectangle(brush, panel.ClientRectangle);
+            }
+        }
+
+        private void ApplyButtonStyling()
+        {
+            // Style menu items
+            foreach (ToolStripMenuItem item in menuStrip1.Items)
+            {
+                item.ForeColor = Color.White;
+                item.BackColor = Color.FromArgb(45, 45, 48);
+            }
+
+            // Apply modern button effects
+            ApplyButtonHoverEffects(parts_btn2);
+            ApplyButtonHoverEffects(parts_btn4);
+            ApplyButtonHoverEffects(parts_btn5);
+            ApplyButtonHoverEffects(btnSelectFiles);
+            ApplyButtonHoverEffects(btnSaveTo);
+        }
+
+        private void ApplyButtonHoverEffects(Button button)
+        {
+            Color originalColor = button.BackColor;
+
+            button.MouseEnter += (s, e) => {
+                button.BackColor = Color.FromArgb(
+                    Math.Min(255, originalColor.R + 30),
+                    Math.Min(255, originalColor.G + 30),
+                    Math.Min(255, originalColor.B + 30));
+            };
+
+            button.MouseLeave += (s, e) => {
+                button.BackColor = originalColor;
+            };
+
+            button.MouseDown += (s, e) => {
+                button.BackColor = Color.FromArgb(
+                    Math.Max(0, originalColor.R - 20),
+                    Math.Max(0, originalColor.G - 20),
+                    Math.Max(0, originalColor.B - 20));
+            };
+
+            button.MouseUp += (s, e) => {
+                button.BackColor = originalColor;
+            };
+        }
+
+        private void UpdateButtonSelection()
+        {
+            // Reset all buttons to default style
+            parts_btn2.BackColor = Color.FromArgb(62, 62, 66);
+            parts_btn4.BackColor = Color.FromArgb(62, 62, 66);
+            parts_btn5.BackColor = Color.FromArgb(62, 62, 66);
+
+            // Highlight selected button
+            switch (stem_count)
+            {
+                case "2":
+                    parts_btn2.BackColor = Color.FromArgb(0, 122, 204);
+                    break;
+                case "4":
+                    parts_btn4.BackColor = Color.FromArgb(0, 122, 204);
+                    break;
+                case "5":
+                    parts_btn5.BackColor = Color.FromArgb(0, 122, 204);
+                    break;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -662,25 +1000,23 @@ namespace SpleeterGui
             {
                 chkRecombine.Checked = false;
                 chkRecombine.Enabled = false;
-                pnlRecombine.Height = 20;
-                pnlMain.Location = new Point(12, 182);
-                this.Height = 677;
+                pnlRecombine.Visible = false;
+                pnlSeparationOptions.Height = 70;
             }
             else
             {
                 chkRecombine.Enabled = true;
+                pnlRecombine.Visible = true;
 
                 if (chkRecombine.Checked)
                 {
-                    pnlRecombine.Height = 50;
-                    pnlMain.Location = new Point(12, 202);
-                    this.Height = 697;
+                    pnlRecombine.Height = 70;
+                    pnlSeparationOptions.Height = 140;
                 }
                 else
                 {
-                    pnlRecombine.Height = 20;
-                    pnlMain.Location = new Point(12, 182);
-                    this.Height = 677;
+                    pnlRecombine.Height = 70;
+                    pnlSeparationOptions.Height = 140;
 
                     chkRPartVocal.Checked = false;
                     chkRPartBass.Checked = false;
