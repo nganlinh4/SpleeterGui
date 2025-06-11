@@ -29,3 +29,6 @@ C:\work\SpleeterGui\SpleeterGui\obj\Release\SpleeterGui.csproj.GenerateResource.
 C:\work\SpleeterGui\SpleeterGui\obj\Release\SpleeterGui.csproj.CoreCompileInputs.cache
 C:\work\SpleeterGui\SpleeterGui\obj\Release\SpleeterGui.exe
 C:\work\SpleeterGui\SpleeterGui\obj\Release\SpleeterGui.pdb
+C:\work\SpleeterGui\SpleeterGui\bin\Release\languages_source\english.xml
+C:\work\SpleeterGui\SpleeterGui\bin\Release\languages_source\korean.xml
+C:\work\SpleeterGui\SpleeterGui\bin\Release\languages_source\vietnamese.xml

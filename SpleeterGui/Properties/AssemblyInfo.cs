@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("SpleeterGui")]
 [assembly: AssemblyDescription("Spleeter source separation - GUI")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Maken it so")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("SpleeterGui")]
 [assembly: AssemblyCopyright("Apache License 2.0")]
 [assembly: AssemblyTrademark("")]

@@ -53,3 +53,6 @@ C:\work\SpleeterGui\SpleeterGui\obj\Debug\SpleeterGui.csproj.GenerateResource.ca
 C:\work\SpleeterGui\SpleeterGui\obj\Debug\SpleeterGui.csproj.CoreCompileInputs.cache
 C:\work\SpleeterGui\SpleeterGui\obj\Debug\SpleeterGui.exe
 C:\work\SpleeterGui\SpleeterGui\obj\Debug\SpleeterGui.pdb
+C:\work\SpleeterGui\SpleeterGui\bin\Debug\languages_source\english.xml
+C:\work\SpleeterGui\SpleeterGui\bin\Debug\languages_source\korean.xml
+C:\work\SpleeterGui\SpleeterGui\bin\Debug\languages_source\vietnamese.xml

@@ -32,19 +32,7 @@ namespace SpleeterGui
             this.stems2 = new System.Windows.Forms.RadioButton();
             this.stems4 = new System.Windows.Forms.RadioButton();
             this.stems5 = new System.Windows.Forms.RadioButton();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuLanguage = new System.Windows.Forms.ToolStripMenuItem();
-            this.advancedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.setPythonPathToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpFAQToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.checkSpleeterGUIUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.spleeterupgradeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripSeparator();
-            this.spleeterGithubPageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.makenItSoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+
             this.btnSaveTo = new System.Windows.Forms.Button();
             this.txt_output_directory = new System.Windows.Forms.TextBox();
             this.chkFullBandwidth = new System.Windows.Forms.CheckBox();
@@ -79,7 +67,7 @@ namespace SpleeterGui
             this.pnlSeparationOptions = new System.Windows.Forms.Panel();
             this.pnlFileInput = new System.Windows.Forms.Panel();
             this.pnlOutput = new System.Windows.Forms.Panel();
-            this.menuStrip1.SuspendLayout();
+
             this.pnlMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.duration)).BeginInit();
             this.pnlRecombine.SuspendLayout();
@@ -110,119 +98,8 @@ namespace SpleeterGui
             this.stems5.Name = "stems5";
             this.stems5.Size = new System.Drawing.Size(104, 24);
             this.stems5.TabIndex = 34;
-            //
-            // menuStrip1
-            //
-            this.menuStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
-            this.menuStrip1.ForeColor = System.Drawing.Color.White;
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem,
-            this.mnuLanguage,
-            this.advancedToolStripMenuItem,
-            this.helpToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 4, 0, 4);
-            this.menuStrip1.Size = new System.Drawing.Size(800, 32);
-            this.menuStrip1.TabIndex = 9;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // fileToolStripMenuItem
-            // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 24);
-            this.fileToolStripMenuItem.Text = "&File";
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
-            this.exitToolStripMenuItem.Text = "E&xit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // mnuLanguage
-            // 
-            this.mnuLanguage.Image = global::SpleeterGui.Properties.Resources._649656_global_32x32;
-            this.mnuLanguage.Name = "mnuLanguage";
-            this.mnuLanguage.Size = new System.Drawing.Size(91, 24);
-            this.mnuLanguage.Text = "Language";
-            // 
-            // advancedToolStripMenuItem
-            // 
-            this.advancedToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.setPythonPathToolStripMenuItem1});
-            this.advancedToolStripMenuItem.Enabled = false;
-            this.advancedToolStripMenuItem.Name = "advancedToolStripMenuItem";
-            this.advancedToolStripMenuItem.Size = new System.Drawing.Size(72, 24);
-            this.advancedToolStripMenuItem.Text = "Advanced";
-            this.advancedToolStripMenuItem.Visible = false;
-            // 
-            // setPythonPathToolStripMenuItem1
-            // 
-            this.setPythonPathToolStripMenuItem1.Name = "setPythonPathToolStripMenuItem1";
-            this.setPythonPathToolStripMenuItem1.Size = new System.Drawing.Size(181, 22);
-            this.setPythonPathToolStripMenuItem1.Text = "Set SpleeterGUI path";
-            this.setPythonPathToolStripMenuItem1.Click += new System.EventHandler(this.setPythonPathToolStripMenuItem1_Click);
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.helpFAQToolStripMenuItem,
-            this.checkSpleeterGUIUpdateToolStripMenuItem,
-            this.spleeterupgradeToolStripMenuItem,
-            this.toolStripMenuItem3,
-            this.spleeterGithubPageToolStripMenuItem,
-            this.makenItSoToolStripMenuItem1});
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 24);
-            this.helpToolStripMenuItem.Text = "&Help";
-            // 
-            // helpFAQToolStripMenuItem
-            // 
-            this.helpFAQToolStripMenuItem.Name = "helpFAQToolStripMenuItem";
-            this.helpFAQToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.helpFAQToolStripMenuItem.Text = "&Help && FAQ";
-            this.helpFAQToolStripMenuItem.Click += new System.EventHandler(this.helpFAQToolStripMenuItem_Click);
-            // 
-            // checkSpleeterGUIUpdateToolStripMenuItem
-            // 
-            this.checkSpleeterGUIUpdateToolStripMenuItem.Enabled = false;
-            this.checkSpleeterGUIUpdateToolStripMenuItem.Name = "checkSpleeterGUIUpdateToolStripMenuItem";
-            this.checkSpleeterGUIUpdateToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.checkSpleeterGUIUpdateToolStripMenuItem.Text = "Check &SpleeterGUI version";
-            this.checkSpleeterGUIUpdateToolStripMenuItem.Click += new System.EventHandler(this.checkSpleeterGUIUpdateToolStripMenuItem_Click);
-            // 
-            // spleeterupgradeToolStripMenuItem
-            // 
-            this.spleeterupgradeToolStripMenuItem.Enabled = false;
-            this.spleeterupgradeToolStripMenuItem.Name = "spleeterupgradeToolStripMenuItem";
-            this.spleeterupgradeToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.spleeterupgradeToolStripMenuItem.Text = "Spleeter core &upgrade";
-            this.spleeterupgradeToolStripMenuItem.Visible = false;
-            this.spleeterupgradeToolStripMenuItem.Click += new System.EventHandler(this.spleeterupgradeToolStripMenuItem_Click);
-            // 
-            // toolStripMenuItem3
-            // 
-            this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(209, 6);
-            // 
-            // spleeterGithubPageToolStripMenuItem
-            // 
-            this.spleeterGithubPageToolStripMenuItem.Name = "spleeterGithubPageToolStripMenuItem";
-            this.spleeterGithubPageToolStripMenuItem.Size = new System.Drawing.Size(212, 22);
-            this.spleeterGithubPageToolStripMenuItem.Text = "SpleeterGUI &Github page";
-            this.spleeterGithubPageToolStripMenuItem.Click += new System.EventHandler(this.spleeterGithubPageToolStripMenuItem_Click);
-            // 
-            // makenItSoToolStripMenuItem1
-            // 
-            this.makenItSoToolStripMenuItem1.Enabled = false;
-            this.makenItSoToolStripMenuItem1.Name = "makenItSoToolStripMenuItem1";
-            this.makenItSoToolStripMenuItem1.Size = new System.Drawing.Size(212, 22);
-            this.makenItSoToolStripMenuItem1.Text = "&Maken It So";
-            this.makenItSoToolStripMenuItem1.Click += new System.EventHandler(this.makenItSoToolStripMenuItem1_Click);
+
+
             //
             // btnSaveTo
             //
@@ -446,7 +323,7 @@ namespace SpleeterGui
             this.pnlFileInput.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.pnlFileInput.Controls.Add(this.lblDroptext);
             this.pnlFileInput.Controls.Add(this.btnSelectFiles);
-            this.pnlFileInput.Location = new System.Drawing.Point(20, 292);
+            this.pnlFileInput.Location = new System.Drawing.Point(20, 422);
             this.pnlFileInput.Name = "pnlFileInput";
             this.pnlFileInput.Size = new System.Drawing.Size(760, 120);
             this.pnlFileInput.TabIndex = 102;
@@ -508,7 +385,7 @@ namespace SpleeterGui
             this.pnlOutput.Controls.Add(this.duration);
             this.pnlOutput.Controls.Add(this.lblSeconds);
             this.pnlOutput.Controls.Add(this.lblMaxLength);
-            this.pnlOutput.Location = new System.Drawing.Point(20, 422);
+            this.pnlOutput.Location = new System.Drawing.Point(20, 292);
             this.pnlOutput.Name = "pnlOutput";
             this.pnlOutput.Size = new System.Drawing.Size(760, 100);
             this.pnlOutput.TabIndex = 103;
@@ -675,7 +552,7 @@ namespace SpleeterGui
             this.pnlHeader.Controls.Add(this.lblSlogan1);
             this.pnlHeader.Controls.Add(this.lblSlogan2);
             this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHeader.Location = new System.Drawing.Point(0, 32);
+            this.pnlHeader.Location = new System.Drawing.Point(0, 0);
             this.pnlHeader.Name = "pnlHeader";
             this.pnlHeader.Size = new System.Drawing.Size(800, 100);
             this.pnlHeader.TabIndex = 100;
@@ -692,11 +569,11 @@ namespace SpleeterGui
             this.Controls.Add(this.pnlFileInput);
             this.Controls.Add(this.pnlSeparationOptions);
             this.Controls.Add(this.pnlHeader);
-            this.Controls.Add(this.menuStrip1);
+
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
+
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -705,8 +582,7 @@ namespace SpleeterGui
             this.Text = "SpleeterGUI";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Shown += new System.EventHandler(this.Form1_Shown);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+
             this.pnlMain.ResumeLayout(false);
             this.pnlMain.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.duration)).EndInit();
@@ -730,18 +606,13 @@ namespace SpleeterGui
         private System.Windows.Forms.RadioButton stems2;
         private System.Windows.Forms.RadioButton stems4;
         private System.Windows.Forms.RadioButton stems5;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+
         private System.Windows.Forms.Button btnSaveTo;
         private System.Windows.Forms.TextBox txt_output_directory;
         private System.Windows.Forms.CheckBox chkFullBandwidth;
-        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ToolStripMenuItem helpFAQToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem spleeterGithubPageToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem makenItSoToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem3;
+
         private System.Windows.Forms.Label lblDroptext;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblSlogan1;
@@ -757,8 +628,7 @@ namespace SpleeterGui
         private System.Windows.Forms.Button btnSelectFiles;
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
-        private System.Windows.Forms.ToolStripMenuItem spleeterupgradeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem checkSpleeterGUIUpdateToolStripMenuItem;
+
         private System.Windows.Forms.Panel pnlMain;
         private System.Windows.Forms.CheckBox chkRecombine;
         private System.Windows.Forms.Panel pnlRecombine;
@@ -767,9 +637,7 @@ namespace SpleeterGui
         private System.Windows.Forms.CheckBox chkRPartDrums;
         private System.Windows.Forms.CheckBox chkRPartBass;
         private System.Windows.Forms.CheckBox chkRPartVocal;
-        private System.Windows.Forms.ToolStripMenuItem mnuLanguage;
-        private System.Windows.Forms.ToolStripMenuItem advancedToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem setPythonPathToolStripMenuItem1;
+
         private System.Windows.Forms.Label lblSeconds;
         private System.Windows.Forms.Label lblMaxLength;
         private System.Windows.Forms.NumericUpDown duration;

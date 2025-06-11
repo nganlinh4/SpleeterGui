@@ -39,7 +39,7 @@
   
 
     <!-- program texts -->
-    <lang english="Showing spleeter version" control="LoadStuff_textBox1">Help: https://makenweb.com/spleeter_help.php[NL]Issues: https://github.com/boy1dr/SpleeterGui/issues[NL][NL]Showing spleeter 버전</lang>
+    <lang english="Showing spleeter version" control="LoadStuff_textBox1">음원 분리 도구[NL][NL]Showing spleeter 버전</lang>
     <lang english="Please select an output directory" control="Form1_DragDrop_msgbox">출력할 경로를 설정하여 주세요</lang>
     <lang english="Starting" control="starting">시작중</lang>
     <lang english="Starting processing of all songs" control="starting_all">선택된 곡들의 분리 작업을 시작중</lang>

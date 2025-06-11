@@ -383,3 +383,57 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+
+# SpleeterGui Specific
+# Release packages
+SpleeterGui_Release/
+*.zip
+
+# Large binary files (Python environment, models)
+python/
+pretrained_models/
+configs/
+
+# Audio test files
+*.mp3
+*.wav
+*.flac
+*.m4a
+*.ogg
+*.wma
+
+# Temporary processing files
+temp/
+output/
+separated/
+
+# Language backup files
+languages_backup/
+
+# Old language files (removed in modernization)
+languages_source/arabic.xml
+languages_source/chinese.xml
+languages_source/french.xml
+languages_source/german.xml
+languages_source/hindi.xml
+languages_source/italian.xml
+languages_source/japanese.xml
+languages_source/russian.xml
+languages_source/spanish.xml
+languages_source/tchinese.xml
+
+# IDE specific
+.idea/
+*.swp
+*.swo
+*~
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini

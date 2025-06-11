@@ -39,7 +39,7 @@
   
 
     <!-- program texts -->
-    <lang english="Showing spleeter version" control="LoadStuff_textBox1">Trợ giúp: https://makenweb.com/spleeter_help.php[NL]Vấn đề: https://github.com/boy1dr/SpleeterGui/issues[NL][NL]Hiển thị phiên bản spleeter</lang>
+    <lang english="Showing spleeter version" control="LoadStuff_textBox1">Công cụ tách nguồn âm nhạc[NL][NL]Hiển thị phiên bản spleeter</lang>
     <lang english="Please select an output directory" control="Form1_DragDrop_msgbox">Vui lòng chọn thư mục đầu ra</lang>
     <lang english="Starting" control="starting">Đang bắt đầu</lang>
     <lang english="Starting processing of all songs" control="starting_all">Bắt đầu xử lý tất cả bài hát</lang>

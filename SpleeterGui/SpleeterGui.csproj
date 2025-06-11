@@ -140,26 +140,17 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\spleeter_logo.jpg" />
-    <Content Include="languages_source\arabic.xml">
-      <SubType>Designer</SubType>
-    </Content>
-    <Content Include="languages_source\chinese.xml">
-      <SubType>Designer</SubType>
-    </Content>
     <Content Include="languages_source\english.xml">
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="languages_source\french.xml" />
-    <Content Include="languages_source\hindi.xml">
+    <Content Include="languages_source\korean.xml">
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="languages_source\italian.xml" />
-    <Content Include="languages_source\japanese.xml" />
-    <Content Include="languages_source\russian.xml">
+    <Content Include="languages_source\vietnamese.xml">
       <SubType>Designer</SubType>
-    </Content>
-    <Content Include="languages_source\spanish.xml">
-      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\649656_global_32x32.jpg" />
     <Content Include="spleeter_icon.ico" />

@@ -1,50 +1,132 @@
-## SpleeterGUI - Music source separation desktop app  
-Windows Desktop Front end for Spleeter - AI source separation  
-   
-Latest package can be downloaded from here <A href="https://spleetergui.com">https://spleetergui.com</a>
-No need to install python or spleeter, this app contains a portable version of python pre-loaded with spleeter.  
-Older versions here https://makenweb.com/#spleetergui  
-The aim for this project is to make it easy for Windows users to download and run Spleeter without needing to use the command line tools to do so.  
+## SpleeterGUI - Music Source Separation Desktop App
+**Modernized Edition with Pixel-Perfect UI**
 
-![SpleeterGUI_app](/Spleeter_GUI.png)  
+A beautiful, modern Windows desktop application for AI-powered music source separation using Spleeter technology. This modernized version features a completely redesigned interface with pixel-perfect rendering, custom controls, and streamlined workflow.
 
-This project is a simple C# desktop front end for Spleeter.  
-Please consider donating and help pay for hosting and development paypal.me/makenitso  
+### 🎯 **Key Features**
+- **Modern UI**: Pixel-perfect custom controls with anti-aliasing and professional styling
+- **Custom Language Dropdown**: Beautiful globe-icon dropdown supporting 3 languages
+- **Streamlined Interface**: Removed cluttered menus for a clean, focused experience
+- **Logical Workflow**: Output folder selection before music file selection
+- **Portable**: No Python installation required - everything is included
 
-## Version history  
-27/07/2020 - MS Defender is falsely identifying V2.7 as a trojan. The exe has been submitted to Microsoft and given the all clear.  
-             Defender definition version 1.319.2309.0 finds no threat
-	     More details can be found here https://github.com/boy1dr/SpleeterGui/issues/36
+### 🌐 **Language Support**
+- **English** (Default)
+- **Vietnamese** (Tiếng Việt)
+- **Korean** (한국어)
+
+![SpleeterGUI_app](/Spleeter_GUI.png)
+
+### 🚀 **What's New in This Modernized Version**
+This is a complete modernization of the original SpleeterGUI with focus on user experience and visual design.
+
+## 🎨 **Modernization Features**
+
+### **Visual Enhancements**
+- ✅ **Pixel-Perfect Rendering**: High-quality anti-aliased graphics with `SmoothingMode.HighQuality`
+- ✅ **Custom Language Dropdown**: Beautiful globe icon with gradient backgrounds and hover effects
+- ✅ **Professional Styling**: Modern color schemes, rounded corners, and shadow effects
+- ✅ **Streamlined Layout**: Removed cluttered menu bar for clean, focused interface
+- ✅ **Logical Workflow**: Output folder selection appears before music file selection
+
+### **Technical Improvements**
+- ✅ **Menu Removal**: Eliminated File/Language/Advanced/Help menu bar
+- ✅ **Language Cleanup**: Reduced from 13 to 3 languages (English, Vietnamese, Korean)
+- ✅ **URL Cleanup**: Removed all references to old project ownership and URLs
+- ✅ **Modern Controls**: Custom-drawn controls with advanced graphics rendering
+- ✅ **Responsive Design**: Hover effects, animations, and visual feedback
+
+## 📋 **Version History**
 
 | Date | Version | Notes |
 | ----: |:-------:| ----- |
-| 7/10/2023 | 2.9.5 | Rebuilt with python 3.10.10 and spleeter 2.4. Updated GUI. New website spleetergui.com |
-| 5/04/2022 | 2.9.2 | Upgraded spleeter to 2.3.0.   Updated python files, the spleeter core update feature is working again. |
-| 30/01/2021 | 2.9.1 | Upgraded spleeter to 2.1.2.   Updated command syntax for latest Spleeter version. |
-| 9/11/2020 | 2.9 | Upgraded spleeter to 2.0.1 and python.  |
-| 31/07/2020 | 2.8 | Upgraded the project to 64bit. |
-| 19/07/2020 | 2.7 | Updated help, set paths for python/ffmpeg (use your own python) |
-| 4/07/2020 | 2.6 | Recombine audio and multi-lingual update. |
-| 10/05/2020 | 2.5 | UI update, Additional help menu items for version check and spleeter core upgrade, Display installed spleeter version on startup |
-| 4/05/2020 | 2.4 | Bug fix: "full bandwidth" mode checked but not enabled by default. |
-| 27/12/2019 | 2.3 | Accessibility update (process button, tab order, access labels and descriptions, ding on complete etc.) |
-| 24/12/2019 | 2.2 | New windows MSI installer. Drag and drop processing. |
-| 21/12/2019 | 2.0 | Interface update, added Batch processing. |
-| 17/12/2019 | 1.1 | Added High quality/expert mode. |
+| **June 2025** | **2.9.5 (Modernized)** | **🎨 Complete UI modernization, pixel-perfect rendering, custom language dropdown, streamlined workflow** |
+| 7/10/2023 | 2.9.5 | Rebuilt with python 3.10.10 and spleeter 2.4. Updated GUI |
+| 5/04/2022 | 2.9.2 | Upgraded spleeter to 2.3.0. Updated python files |
+| 30/01/2021 | 2.9.1 | Upgraded spleeter to 2.1.2. Updated command syntax |
+| 9/11/2020 | 2.9 | Upgraded spleeter to 2.0.1 and python |
+| 31/07/2020 | 2.8 | Upgraded the project to 64bit |
   
 
-## Older versions  
-Version 2.8 https://makenweb.com/downloads/SpleeterGUI_V2.8.msi  
-Version 2.7 https://makenweb.com/downloads/SpleeterGUI_V2.7.msi  
+## 🚀 **Getting Started**
 
-## Examples
-https://www.youtube.com/watch?v=bdNzVPLzOLE  
-https://www.youtube.com/watch?v=nxJfIsus0Ig  
-https://www.youtube.com/watch?v=PHGAmZhuI-c  
-https://www.youtube.com/watch?v=3X5nfc2d1Rw  
-https://www.youtube.com/watch?v=9KkWJHC2bz0  
-https://www.youtube.com/watch?v=Mygm1sFlQXc  
+### **System Requirements**
+- Windows 10/11 (64-bit)
+- .NET Framework 4.8 or higher
+- 4GB RAM minimum (8GB recommended)
+- 2GB free disk space
 
-The project contains the C# source code for the Graphical User Interface. It also contains Python3.7 and the Spleeter project.  
+### **Installation**
+1. Download the latest release from the releases section
+2. Extract all files to a folder of your choice
+3. Run `SpleeterGui.exe`
+4. No additional installation required - all dependencies included!
 
-Feel free to inspect the source code and build for yourself. you can also install your own python/tensorflow/ffmpeg/spleeter.
+### **Usage**
+1. **Select separation mode**: Choose 2, 4, or 5 stems
+2. **Choose output folder**: Click "📂 Output Folder" (appears first for logical workflow)
+3. **Select music files**: Drag & drop or click "📁 Browse for Files"
+4. **Processing begins automatically**: Separated files saved to your chosen directory
+
+## 🎵 **Separation Modes**
+- **2 stems**: Vocal + Accompaniment
+- **4 stems**: Vocal + Bass + Drums + Other
+- **5 stems**: Vocal + Bass + Drums + Piano + Other
+
+## 🎨 **Features**
+- **Modern UI**: Pixel-perfect custom controls with professional styling
+- **Multi-language**: English, Vietnamese, Korean with beautiful dropdown
+- **Drag & Drop**: Simply drop music files to start processing
+- **Batch Processing**: Handle multiple files at once
+- **High Quality**: 16kHz full bandwidth mode available
+- **Portable**: Complete Python 3.10 + Spleeter 2.4 environment included
+
+## 🛠️ **Development**
+
+### **Building from Source**
+```bash
+# Clone the repository
+git clone <repository-url>
+cd SpleeterGui
+
+# Build Debug version
+dotnet build SpleeterGui.sln
+
+# Build Release version
+msbuild SpleeterGui.sln /p:Configuration=Release
+```
+
+### **Project Structure**
+```
+SpleeterGui/
+├── SpleeterGui/              # Main C# application
+│   ├── Form1.cs             # Main form with modern UI
+│   ├── Form1.Designer.cs    # UI layout and controls
+│   └── languages_source/    # Language files (EN, VI, KO)
+├── configs/                 # Spleeter configuration files
+├── pretrained_models/       # AI models for separation
+└── python/                  # Portable Python 3.10 environment
+```
+
+### **Technical Details**
+- **Framework**: .NET Framework 4.8
+- **Platform**: x64 (64-bit)
+- **UI**: Windows Forms with custom rendering
+- **Graphics**: High-quality anti-aliased rendering
+- **Python**: Portable Python 3.10.10
+- **Spleeter**: Version 2.4
+- **Audio Processing**: FFmpeg included
+
+## 🎬 **Demo Videos**
+- [Vocal Isolation Demo](https://www.youtube.com/watch?v=bdNzVPLzOLE)
+- [4-Stem Separation](https://www.youtube.com/watch?v=nxJfIsus0Ig)
+- [5-Stem Advanced Mode](https://www.youtube.com/watch?v=PHGAmZhuI-c)
+
+## 📄 **License**
+This software is provided under the Apache License 2.0. See the original Spleeter project for AI model licensing information.
+
+## 🙏 **Credits**
+- **Spleeter AI Models**: [Deezer Research](https://github.com/deezer/spleeter)
+- **Modern UI Design**: Pixel-perfect rendering and custom controls
+- **Multi-language Support**: English, Vietnamese, Korean translations
+- **Portable Environment**: Python 3.10 + dependencies integration
